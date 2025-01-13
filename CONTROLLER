@@ -24,7 +24,8 @@ class Controller:
         self._model.create_graph(anno, state)
         nNodes, nEdges = self._model.getDetails()
         self._view.txt_result1.controls.append(ft.Text(f'Il grafo ha {nNodes} nodi e {nEdges} archi'))
-
+        self._view.txt_result1.controls.append(
+            ft.Text(f"Il grafo ha: {self._model.get_num_connesse()} componenti connesse"))
         connessa = self._model.get_largest_connessa()
         self._view.txt_result1.controls.append(ft.Text(f"La componente connessa più grande "
                                                        f"è costituita da {len(connessa)} nodi:"))
